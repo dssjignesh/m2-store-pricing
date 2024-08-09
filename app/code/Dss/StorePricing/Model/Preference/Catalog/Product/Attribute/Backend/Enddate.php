@@ -27,7 +27,7 @@ class Enddate extends Datetime
      * @param \Magento\Eav\Model\Entity\Attribute\AbstractAttribute $attribute
      * @return $this
      */
-    public function setAttribute($attribute)
+    public function setAttribute($attribute): self
     {
         parent::setAttribute($attribute);
         $this->setScope($attribute);
@@ -40,7 +40,7 @@ class Enddate extends Datetime
      * @param \Magento\Eav\Model\Entity\Attribute\AbstractAttribute $attribute
      * @return $this
      */
-    public function setScope($attribute)
+    public function setScope($attribute): self
     {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $helper = $objectManager->create(\Dss\StorePricing\Helper\Data::class);

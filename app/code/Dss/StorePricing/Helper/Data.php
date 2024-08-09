@@ -87,7 +87,7 @@ class Data extends AbstractHelper
      * Logging Utility
      *
      * @param string $message
-     * @param bool|false $useSeparator
+     * @param bool $useSeparator
      */
     public function log($message, $useSeparator = false)
     {

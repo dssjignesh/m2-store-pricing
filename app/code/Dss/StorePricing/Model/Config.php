@@ -35,9 +35,13 @@ class Config implements ConfigInterface
     }
 
     /**
-     * @inheritDoc
+     * Retrieve configuration flag value.
+     *
+     * @param string $xmlPath
+     * @param int|null $storeId
+     * @return bool
      */
-    public function getConfigFlag($xmlPath, $storeId = null)
+    public function getConfigFlag($xmlPath, $storeId = null): bool
     {
         return $this->scopeConfig->isSetFlag(
             $xmlPath,
@@ -47,9 +51,13 @@ class Config implements ConfigInterface
     }
 
     /**
-     * @inheritDoc
+     * Retrieve configuration value.
+     *
+     * @param string $xmlPath
+     * @param int|null $storeId
+     * @return string
      */
-    public function getConfigValue($xmlPath, $storeId = null)
+    public function getConfigValue($xmlPath, $storeId = null): string
     {
         return $this->scopeConfig->getValue(
             $xmlPath,
@@ -64,7 +72,7 @@ class Config implements ConfigInterface
      * @param int|null $storeId
      * @return bool
      */
-    public function isEnabled($storeId = null)
+    public function isEnabled($storeId = null): bool
     {
         return $this->getConfigFlag(self::XML_PATH_ENABLED, $storeId);
     }
@@ -75,7 +83,7 @@ class Config implements ConfigInterface
      * @param int|null $storeId
      * @return bool
      */
-    public function isDebugEnabled($storeId = null)
+    public function isDebugEnabled($storeId = null): bool
     {
         return $this->getConfigFlag(self::XML_PATH_DEBUG, $storeId);
     }
@@ -86,7 +94,7 @@ class Config implements ConfigInterface
      * @param int|null $storeId
      * @return bool
      */
-    public function isPriceStoreScope($storeId = null)
+    public function isPriceStoreScope($storeId = null): bool
     {
         $active = $this->getConfigValue(self::XML_PATH_PRICE_SCOPE, $storeId);
         if ($active == static::STORE_SCOPE_PRICE_VALUE) {

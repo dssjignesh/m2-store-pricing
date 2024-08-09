@@ -39,7 +39,7 @@ class Scope
     public function afterToOptionArray(
         \Magento\Catalog\Model\Config\Source\Price\Scope $subject,
         $result
-    ) {
+    ): array {
         $result[] = [
             'value' => Config::STORE_SCOPE_PRICE_VALUE,
             'label' => __('Store View')

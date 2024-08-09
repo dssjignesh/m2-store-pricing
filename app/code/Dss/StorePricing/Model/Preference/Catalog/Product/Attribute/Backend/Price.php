@@ -27,7 +27,7 @@ class Price extends CorePrice
      * @param \Magento\Catalog\Model\ResourceModel\Eav\Attribute $attribute
      * @return $this
      */
-    public function setScope($attribute)
+    public function setScope($attribute): self
     {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $helper = $objectManager->create(\Dss\StorePricing\Helper\Data::class);

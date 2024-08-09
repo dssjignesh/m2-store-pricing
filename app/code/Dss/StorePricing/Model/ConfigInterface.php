@@ -25,7 +25,7 @@ interface ConfigInterface
      * @param int $storeId
      * @return bool
      */
-    public function getConfigFlag($xmlPath, $storeId = null);
+    public function getConfigFlag($xmlPath, $storeId = null): bool;
 
     /**
      * Get configuration value
@@ -34,5 +34,5 @@ interface ConfigInterface
      * @param int $storeId
      * @return string
      */
-    public function getConfigValue($xmlPath, $storeId = null);
+    public function getConfigValue($xmlPath, $storeId = null): string;
 }

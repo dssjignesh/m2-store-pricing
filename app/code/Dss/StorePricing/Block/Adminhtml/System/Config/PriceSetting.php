@@ -38,7 +38,7 @@ class PriceSetting extends Field
      * @param AbstractElement $element The form element being rendered.
      * @return string The rendered HTML.
      */
-    public function render(AbstractElement $element)
+    public function render(AbstractElement $element): string
     {
         $element->unsScope()->unsCanUseWebsiteValue()->unsCanUseDefaultValue();
         return $this->_toHtml();

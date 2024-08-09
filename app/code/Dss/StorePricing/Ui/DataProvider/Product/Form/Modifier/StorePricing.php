@@ -49,7 +49,7 @@ class StorePricing extends AbstractModifier
      * @param array $meta
      * @return array
      */
-    public function modifyMeta(array $meta)
+    public function modifyMeta(array $meta): array
     {
         $scopeLabel = $this->getPriceScopeLabel();
         $meta["product-details"]["children"]["container_price"]["children"]["price"]["arguments"]["data"]
@@ -72,7 +72,7 @@ class StorePricing extends AbstractModifier
      *
      * @return string
      */
-    public function getPriceScopeLabel()
+    public function getPriceScopeLabel(): string
     {
         if ($this->storeManager->isSingleStoreMode()) {
             return '';
