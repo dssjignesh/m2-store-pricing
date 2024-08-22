@@ -38,10 +38,10 @@ class Config implements ConfigInterface
      * Retrieve configuration flag value.
      *
      * @param string $xmlPath
-     * @param int|null $storeId
+     * @param ?int $storeId
      * @return bool
      */
-    public function getConfigFlag($xmlPath, $storeId = null): bool
+    public function getConfigFlag(string $xmlPath, ?int $storeId = null): bool
     {
         return $this->scopeConfig->isSetFlag(
             $xmlPath,
@@ -54,10 +54,10 @@ class Config implements ConfigInterface
      * Retrieve configuration value.
      *
      * @param string $xmlPath
-     * @param int|null $storeId
-     * @return string
+     * @param ?int $storeId
+     * @return ?string
      */
-    public function getConfigValue($xmlPath, $storeId = null): string
+    public function getConfigValue(string $xmlPath, ?int $storeId = null): ?string
     {
         return $this->scopeConfig->getValue(
             $xmlPath,
@@ -69,10 +69,10 @@ class Config implements ConfigInterface
     /**
      * Check if the module is enabled
      *
-     * @param int|null $storeId
+     * @param ?int $storeId
      * @return bool
      */
-    public function isEnabled($storeId = null): bool
+    public function isEnabled(?int $storeId = null): bool
     {
         return $this->getConfigFlag(self::XML_PATH_ENABLED, $storeId);
     }
@@ -80,10 +80,10 @@ class Config implements ConfigInterface
     /**
      * Check if debug mode is enabled
      *
-     * @param int|null $storeId
+     * @param ?int $storeId
      * @return bool
      */
-    public function isDebugEnabled($storeId = null): bool
+    public function isDebugEnabled(?int $storeId = null): bool
     {
         return $this->getConfigFlag(self::XML_PATH_DEBUG, $storeId);
     }
@@ -91,10 +91,10 @@ class Config implements ConfigInterface
     /**
      * Check if the price scope is set to store level
      *
-     * @param int|null $storeId
+     * @param ?int $storeId
      * @return bool
      */
-    public function isPriceStoreScope($storeId = null): bool
+    public function isPriceStoreScope(?int $storeId = null): bool
     {
         $active = $this->getConfigValue(self::XML_PATH_PRICE_SCOPE, $storeId);
         if ($active == static::STORE_SCOPE_PRICE_VALUE) {
