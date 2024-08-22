@@ -22,17 +22,17 @@ interface ConfigInterface
      * Get configuration boolean value
      *
      * @param string $xmlPath
-     * @param int $storeId
+     * @param ?int $storeId
      * @return bool
      */
-    public function getConfigFlag($xmlPath, $storeId = null): bool;
+    public function getConfigFlag(string $xmlPath, ?int $storeId = null): bool;
 
     /**
      * Get configuration value
      *
      * @param string $xmlPath
-     * @param int $storeId
-     * @return string
+     * @param ?int $storeId
+     * @return ?string
      */
-    public function getConfigValue($xmlPath, $storeId = null): string;
+    public function getConfigValue(string $xmlPath, ?int $storeId = null): ?string;
 }
